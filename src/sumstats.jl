@@ -101,7 +101,15 @@ function filter_input!(zsc_t::DataFrame, legend::DataFrame)
 
     # filter out rows in filter set
     rev_set = sort(collect(IntSet(rev_set)))
-    zsc_t[:Z][rev_set] = 1.0*zsc_t[:Z][rev_set]
+    zsc_t[:Z][rev_set] = -1.0*zsc_t[:Z][rev_set]
     filter_set = sort(collect(IntSet(filter_set)))
     deleterows!(zsc_t, filter_set)
+
+    # make the position match
+    for i=1:size(zsc_t, 1)
+        snpid = zsc_t[:rsID][i]
+        if snpid in legend[:rsID]
+            zsc_t[:pos][i] = legend[:pos][legend[:rsID] .== snpid][1]
+        end
+    end
 end

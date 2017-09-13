@@ -5,7 +5,7 @@ module ImputeZScore
 
 include("sumstats.jl")
 
-export impute_zscore
+export impute_zscore, filter_input!
 
 using DataFrames, SnpArrays
 
@@ -90,7 +90,7 @@ function impute_zscore(zsc_t::DataFrame, refpanel::SnpData;
   end
 
   return zsc_out
-  
+
 end
 
 """

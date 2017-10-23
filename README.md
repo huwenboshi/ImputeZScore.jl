@@ -14,3 +14,7 @@ interactive terminal
 ```julia
 Pkg.clone("https://github.com/huwenboshi/ImputeZScore.jl.git")
 ```
+
+## Reference
+
+Pasaniuc, Bogdan, Noah Zaitlen, Huwenbo Shi, Gaurav Bhatia, Alexander Gusev, Joseph Pickrell, Joel Hirschhorn, David P. Strachan, Nick Patterson, and Alkes L. Price. "Fast and accurate imputation of summary statistics enhances evidence of functional enrichment." Bioinformatics 30, no. 20 (2014): 2906-2914.

@@ -2,13 +2,38 @@
     "docs": [
         {
             "location": "/", 
-            "text": "ImputeZScore.jl\n\n\nImputeZScore.jl is a julia package to impute GWAS summary association\nstatistics without the need to first perform genotype imputation.", 
+            "text": "ImputeZScore.jl\n\n\nImputeZScore is a julia package for imputing GWAS summary association\nstatistics without the need to first perform genotype imputation.\n\n\nInstallation\n\n\nImputeZScore requires Julia 0.5. To install ImputeZScore please type\nthe following code in a Julia REPL:\n\n\nPkg.clone(\nhttps://github.com/huwenboshi/ImputeZScore.jl.git\n)\n\n\n\n\n\nUninstallation\n\n\nTo uninstall ImputeZScore please type the following code in\na Julia REPL:\n\n\nPkg.rm(\nImputeZScore\n)\n\n\n\n\n\nKey Features\n\n\n\n\nFast and accurate imputation of GWAS summary association statistics\n\n\nDoes not require individual-level data\n\n\n\n\nReference\n\n\nPasaniuc, Bogdan, Noah Zaitlen, Huwenbo Shi, Gaurav Bhatia, Alexander Gusev, Joseph Pickrell, Joel Hirschhorn, David P. Strachan, Nick Patterson, and Alkes L. Price. \"Fast and accurate imputation of summary statistics enhances evidence of functional enrichment.\" Bioinformatics 30, no. 20 (2014): 2906-2914.\n\n\nContact\n\n\nHuwenbo Shi\n (shihuwenbo [at] ucla [dot] edu)", 
             "title": "Home"
         }, 
         {
             "location": "/#imputezscorejl", 
-            "text": "ImputeZScore.jl is a julia package to impute GWAS summary association\nstatistics without the need to first perform genotype imputation.", 
+            "text": "ImputeZScore is a julia package for imputing GWAS summary association\nstatistics without the need to first perform genotype imputation.", 
             "title": "ImputeZScore.jl"
+        }, 
+        {
+            "location": "/#installation", 
+            "text": "ImputeZScore requires Julia 0.5. To install ImputeZScore please type\nthe following code in a Julia REPL:  Pkg.clone( https://github.com/huwenboshi/ImputeZScore.jl.git )", 
+            "title": "Installation"
+        }, 
+        {
+            "location": "/#uninstallation", 
+            "text": "To uninstall ImputeZScore please type the following code in\na Julia REPL:  Pkg.rm( ImputeZScore )", 
+            "title": "Uninstallation"
+        }, 
+        {
+            "location": "/#key-features", 
+            "text": "Fast and accurate imputation of GWAS summary association statistics  Does not require individual-level data", 
+            "title": "Key Features"
+        }, 
+        {
+            "location": "/#reference", 
+            "text": "Pasaniuc, Bogdan, Noah Zaitlen, Huwenbo Shi, Gaurav Bhatia, Alexander Gusev, Joseph Pickrell, Joel Hirschhorn, David P. Strachan, Nick Patterson, and Alkes L. Price. \"Fast and accurate imputation of summary statistics enhances evidence of functional enrichment.\" Bioinformatics 30, no. 20 (2014): 2906-2914.", 
+            "title": "Reference"
+        }, 
+        {
+            "location": "/#contact", 
+            "text": "Huwenbo Shi  (shihuwenbo [at] ucla [dot] edu)", 
+            "title": "Contact"
         }, 
         {
             "location": "/input_format/", 

@@ -198,9 +198,64 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Home
+      </label>
+    
     <a href="." title="Home" class="md-nav__link md-nav__link--active">
       Home
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstallation" title="Uninstallation" class="md-nav__link">
+    Uninstallation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" title="Key Features" class="md-nav__link">
+    Key Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" title="Contact" class="md-nav__link">
+    Contact
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -246,6 +301,48 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstallation" title="Uninstallation" class="md-nav__link">
+    Uninstallation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" title="Key Features" class="md-nav__link">
+    Key Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" title="Reference" class="md-nav__link">
+    Reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contact" title="Contact" class="md-nav__link">
+    Contact
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -260,8 +357,31 @@
                 
                 
                 <h1 id="imputezscorejl">ImputeZScore.jl<a class="headerlink" href="#imputezscorejl" title="Permanent link">&para;</a></h1>
-<p>ImputeZScore.jl is a julia package to impute GWAS summary association
+<p>ImputeZScore is a julia package for imputing GWAS summary association
 statistics without the need to first perform genotype imputation.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>ImputeZScore requires Julia 0.5. To install ImputeZScore please type
+the following code in a Julia REPL:</p>
+<div class="codehilite"><pre><span></span>Pkg.clone(&quot;https://github.com/huwenboshi/ImputeZScore.jl.git&quot;)
+</pre></div>
+
+
+<h2 id="uninstallation">Uninstallation<a class="headerlink" href="#uninstallation" title="Permanent link">&para;</a></h2>
+<p>To uninstall ImputeZScore please type the following code in
+a Julia REPL:</p>
+<div class="codehilite"><pre><span></span>Pkg.rm(&quot;ImputeZScore&quot;)
+</pre></div>
+
+
+<h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Fast and accurate imputation of GWAS summary association statistics</li>
+<li>Does not require individual-level data</li>
+</ol>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<p>Pasaniuc, Bogdan, Noah Zaitlen, Huwenbo Shi, Gaurav Bhatia, Alexander Gusev, Joseph Pickrell, Joel Hirschhorn, David P. Strachan, Nick Patterson, and Alkes L. Price. "Fast and accurate imputation of summary statistics enhances evidence of functional enrichment." Bioinformatics 30, no. 20 (2014): 2906-2914.</p>
+<h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
+<p><a href="https://huwenboshi.github.io">Huwenbo Shi</a> (shihuwenbo [at] ucla [dot] edu)</p>
                 
                   
                 

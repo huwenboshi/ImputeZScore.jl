@@ -37,13 +37,28 @@
         }, 
         {
             "location": "/input_format/", 
-            "text": "Input Format", 
+            "text": "Input Format\n\n\nThis page describes the format of the input to ImputeZScore.\n\n\nGWAS summary association data\n\n\nFor each chromosome, ImputeZScore requires a single text file containing the\nfollowing columns in the input GWAS summary association data:\n\n\n\n\nSNP - rs ID of the SNP (e.g. rs62442).\n\n\nBP - Base pair position of the SNP.\n\n\nA1 - Effect allele of the SNP. The sign of the Z-score is with respect to this allele.\n\n\nA2 - The other allele of the SNP.\n\n\nZ - The Z-score of the SNP.\n\n\n\n\nGenome partition\n\n\nThe genome partition file should be in bed format, one for each chromosome. \n\n\nReference panel\n\n\nReference panels should be in \nPLINK format\n.\n\n\nThe following is a list of popular publicly available reference panels.\n\n\n\n\n1000 Genomes Project\n\n\nUK10K\n\n\n\n\nWe provide 1000 Genomes reference panel for Europeans \nhere\n.\nAll SNPs in this reference panel have minor allele frequency greater than 1%.", 
             "title": "Input Format"
         }, 
         {
             "location": "/input_format/#input-format", 
-            "text": "", 
+            "text": "This page describes the format of the input to ImputeZScore.", 
             "title": "Input Format"
+        }, 
+        {
+            "location": "/input_format/#gwas-summary-association-data", 
+            "text": "For each chromosome, ImputeZScore requires a single text file containing the\nfollowing columns in the input GWAS summary association data:   SNP - rs ID of the SNP (e.g. rs62442).  BP - Base pair position of the SNP.  A1 - Effect allele of the SNP. The sign of the Z-score is with respect to this allele.  A2 - The other allele of the SNP.  Z - The Z-score of the SNP.", 
+            "title": "GWAS summary association data"
+        }, 
+        {
+            "location": "/input_format/#genome-partition", 
+            "text": "The genome partition file should be in bed format, one for each chromosome.", 
+            "title": "Genome partition"
+        }, 
+        {
+            "location": "/input_format/#reference-panel", 
+            "text": "Reference panels should be in  PLINK format .  The following is a list of popular publicly available reference panels.   1000 Genomes Project  UK10K   We provide 1000 Genomes reference panel for Europeans  here .\nAll SNPs in this reference panel have minor allele frequency greater than 1%.", 
+            "title": "Reference panel"
         }, 
         {
             "location": "/impute_zscore/", 

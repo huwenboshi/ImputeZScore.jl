@@ -210,9 +210,50 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Input Format
+      </label>
+    
     <a href="./" title="Input Format" class="md-nav__link md-nav__link--active">
       Input Format
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gwas-summary-association-data" title="GWAS summary association data" class="md-nav__link">
+    GWAS summary association data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genome-partition" title="Genome partition" class="md-nav__link">
+    Genome partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-panel" title="Reference panel" class="md-nav__link">
+    Reference panel
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -246,6 +287,34 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gwas-summary-association-data" title="GWAS summary association data" class="md-nav__link">
+    GWAS summary association data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#genome-partition" title="Genome partition" class="md-nav__link">
+    Genome partition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-panel" title="Reference panel" class="md-nav__link">
+    Reference panel
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -260,6 +329,29 @@
                 
                 
                 <h1 id="input-format">Input Format<a class="headerlink" href="#input-format" title="Permanent link">&para;</a></h1>
+<p>This page describes the format of the input to ImputeZScore.</p>
+<h2 id="gwas-summary-association-data">GWAS summary association data<a class="headerlink" href="#gwas-summary-association-data" title="Permanent link">&para;</a></h2>
+<p>For each chromosome, ImputeZScore requires a single text file containing the
+following columns in the input GWAS summary association data:</p>
+<ul>
+<li>rsID - rs ID of the SNP (e.g. rs62442).</li>
+<li>pos - Base pair position of the SNP.</li>
+<li>A0 - Effect allele of the SNP. The sign of the Z-score is with respect to this allele.</li>
+<li>A1 - The other allele of the SNP.</li>
+<li>Z - The Z-score of the SNP.</li>
+</ul>
+<h2 id="genome-partition">Genome partition<a class="headerlink" href="#genome-partition" title="Permanent link">&para;</a></h2>
+<p>The genome partition file should be in bed format, one for each chromosome. </p>
+<h2 id="reference-panel">Reference panel<a class="headerlink" href="#reference-panel" title="Permanent link">&para;</a></h2>
+<p>Reference panels should be in <a href="https://www.cog-genomics.org/plink/2.0/input#bed">PLINK format</a>
+(supplied through the <code>--bfile</code> flag).</p>
+<p>The following is a list of popular publicly available reference panels.</p>
+<ul>
+<li><a href="http://www.internationalgenome.org/data/">1000 Genomes Project</a></li>
+<li><a href="https://www.uk10k.org/data_access.html">UK10K</a></li>
+</ul>
+<p>We provide 1000 Genomes reference panel for Europeans <a href="https://ucla.box.com/s/4ya4lxvwjsujt6rrotn3keaiw9dkolld">here</a>.
+All SNPs in this reference panel have minor allele frequency greater than 1%.</p>
                 
                   
                 

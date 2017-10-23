@@ -9,6 +9,26 @@
             "location": "/#imputezscorejl", 
             "text": "ImputeZScore.jl is a julia package to impute GWAS summary association\nstatistics without the need to first perform genotype imputation.", 
             "title": "ImputeZScore.jl"
+        }, 
+        {
+            "location": "/input_format/", 
+            "text": "Input Format", 
+            "title": "Input Format"
+        }, 
+        {
+            "location": "/input_format/#input-format", 
+            "text": "", 
+            "title": "Input Format"
+        }, 
+        {
+            "location": "/impute_zscore/", 
+            "text": "Impute Z Score", 
+            "title": "Impute Z Score"
+        }, 
+        {
+            "location": "/impute_zscore/#impute-z-score", 
+            "text": "", 
+            "title": "Impute Z Score"
         }
     ]
 }

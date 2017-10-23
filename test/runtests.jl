@@ -1,8 +1,8 @@
 module ImputeZScoreTest
 
-include("../src/ImputeZScore.jl")
+#include("../src/ImputeZScore.jl")
 
-using DataFrames, .ImputeZScore, SnpArrays
+using DataFrames, ImputeZScore, SnpArrays
 
 if VERSION >= v"0.5.0-dev+7720"
     using Base.Test

@@ -222,9 +222,43 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Impute Z Score
+      </label>
+    
     <a href="./" title="Impute Z Score" class="md-nav__link md-nav__link--active">
       Impute Z Score
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -246,6 +280,27 @@
     
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" title="Getting Started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" title="Background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -260,6 +315,92 @@
                 
                 
                 <h1 id="impute-z-score">Impute Z Score<a class="headerlink" href="#impute-z-score" title="Permanent link">&para;</a></h1>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<p>In a traditional GWAS, one collects genotype data at a small subset of SNPs
+over some individuals, then imputes genotypes across the entire genome, and
+finally computes association statistics (e.g. Z-scores) for each genotyped
+and imputed SNPs. This procedure can take tremendous amount of time as
+genotype imputation is computationally extensive.</p>
+<p>Here, we impute Z-scores of ungenotyped SNPs directly from Z-scores of
+genotyped SNPs, without first performing genotype imputation, saving hundreds
+of hours of CPU time. The idea behind this approach is that Z-scores of
+genotyped and ungenotyped SNPs follow a multivariate normal distribution with
+LD matrix, which can be estimated from a reference panel, as the covariance
+structure -- one can impute the Z-scores of ungenotyped SNPs as the
+expectation of Z-scores of ungenotyped SNPs conditional on the Z-scores of
+genotyped SNPs.</p>
+<p>In detail, let \(Z = (Z_t, Z_u)\) be the Z-score vector partitioned into two
+components, genotyped (\(Z_t\)) and ungenotyped (\(Z_u\)). It has been
+previously shown that \(Z\) has the following distribution,
+<script type="math/tex; mode=display">
+\left[
+\begin{array}{c}
+Z_t \\
+Z_u
+\end{array}
+\right]
+\sim
+MVN
+\left(
+\left[
+\begin{array}{c}
+\Lambda_t \\
+\Lambda_u
+\end{array}
+\right]
+,
+\left[
+\begin{array}{cc}
+\Sigma_{tt} & \Sigma_{tu}\\
+\Sigma_{ut} & \Sigma_{uu}
+\end{array}
+\right]
+\right),
+</script>
+where \(\Lambda = (\Lambda_t, \Lambda_u)\) is the non-centrality parameter,
+\(\Sigma_{tt}\) the LD between genotyped SNPs, \(\Sigma_{tu}\) the LD
+between genotyped and ungenotyped SNPs, \(\Sigma_{uu}\) the LD between
+ungenotyped SNPs.</p>
+<p>The conditional expectation of \(Z_u\) given \(Z_t\) is then
+<script type="math/tex; mode=display">
+Z_u | Z_t
+\sim
+MVN
+\left(
+\Lambda_u + \Sigma_{ut} \Sigma^{-1}_{tt} Z_t
+,
+\Sigma_{uu} - \Sigma_{ut} \Sigma^{-1}_{tt} \Sigma_{tu}
+\right).
+</script>
+</p>
+<p>We impute the Z-scores of ungenotyped SNPs as
+\(\hat{Z}<em>u = E[Z_u | Z_t] = \Sigma</em>{ut} \Sigma^{-1}<em>{tt} Z_t\) under the
+null assumption that \(\Lambda_u = 0\). Let
+\(W = \Sigma</em>{ut} \Sigma^{-1}<em>{tt}\). This can be viewed as the weights on
+Z-scores of genotyped SNPs in the imputation of Z-scores of ungenotyped SNPs.
+Then 
+<script type="math/tex; mode=display">
+\hat{Z}_u \sim MVN (0, \Sigma_{ut} \Sigma^{-1}_{tt} \Sigma_{tu}),
+</script>
+where each entry $\hat{Z}</em>{u,i}$ of $\hat{Z}<em>u$ follows
+<script type="math/tex; mode=display">
+\hat{Z}_{u,i} \sim N (0, \Sigma_{ut,i*} \Sigma^{-1}_{tt} \Sigma_{tu,*i}).
+</script>
+Here, \(\Sigma</em>{ut,i<em>}\) denotes the \(i\)-th row of \(\Sigma_{ut}\) and
+\(\Sigma_{tu,</em>i}\) the \(i\)-th column of \(\Sigma_{tu}\). To obtain an
+associations statistics that has mean 0 and variance 1, we standardize
+\(\hat{Z}<em>{u,i}\) by
+\(\sqrt{\Sigma</em>{ut,i<em>} \Sigma^{-1}<em>{tt} \Sigma</em>{tu,</em>i}}\). More
+specifically, the final imputated association statistics of each SNP is
+<script type="math/tex; mode=display">
+\hat{Z}_{imp,i} = {\hat{Z}_{u,i} \over \sqrt{\Sigma_{ut,i*} \Sigma^{-1}_{tt} \Sigma_{tu,*i}}}
+\sim N(0, 1).
+</script>
+</p>
+<p>In practice, inverting a large matrix can be time-consuming. Instead, we adopt
+a window-based approach, i.e. we impute Z-scores of ungenotyped SNPs one
+window at a time.</p>
                 
                   
                 

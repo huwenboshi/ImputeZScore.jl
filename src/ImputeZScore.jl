@@ -43,8 +43,8 @@ function impute_zscore(zsc_t::DataFrame, refpanel::SnpData;
     stop = min(partition[i][2] + buf_size, max_pos)
 
     # load data in the window
-    zsc_t_buf = zsc_t[(zsc_t[:pos] .>= start) & (zsc_t[:pos] .< stop), :]
-    legend_buf = legend[(legend[:pos].>=start) & (legend[:pos] .< stop), :]
+    zsc_t_buf = zsc_t[(zsc_t[:BP] .>= start) & (zsc_t[:BP] .< stop), :]
+    legend_buf = legend[(legend[:BP].>=start) & (legend[:BP] .< stop), :]
     nsnp, ntyped = size(legend_buf, 1), size(zsc_t_buf, 1)
     nimpute = nsnp - ntyped
 

@@ -317,9 +317,22 @@
                 <h1 id="impute-z-score">Impute Z Score<a class="headerlink" href="#impute-z-score" title="Permanent link">&para;</a></h1>
 <h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <h2 id="background">Background<a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
-<p>In a traditional GWAS, one collects genotype data at a small subset of SNPs over some individuals, then imputes genotypes across the entire genome, and finally computes association statistics (e.g. Z-scores) for each genotyped and imputed SNPs. This procedure can take tremendous amount of time as genotype imputation is computationally extensive.</p>
-<p>Here, we impute Z-scores of ungenotyped SNPs directly from Z-scores of genotyped SNPs, without first performing genotype imputation, saving hundreds of hours of CPU time. The idea behind this approach is that Z-scores of genotyped and ungenotyped SNPs follow a multivariate normal distribution with LD matrix, which can be estimated from a reference panel, as the covariance structure -- one can impute the Z-scores of ungenotyped SNPs as the expectation of Z-scores of ungenotyped SNPs conditional on the Z-scores of genotyped SNPs.</p>
-<p>In detail, let $Z = (Z_t, Z_u)$ be the Z-score vector partitioned into two components, genotyped ($Z_t$) and ungenotyped ($Z_u$). It has been previously shown that $Z$ has the following distribution,
+<p>In a traditional GWAS, one collects genotype data at a small subset of SNPs
+over some individuals, then imputes genotypes across the entire genome, and
+finally computes association statistics (e.g. Z-scores) for each genotyped
+and imputed SNPs. This procedure can take tremendous amount of time as
+genotype imputation is computationally extensive.</p>
+<p>Here, we impute Z-scores of ungenotyped SNPs directly from Z-scores of
+genotyped SNPs, without first performing genotype imputation, saving hundreds
+of hours of CPU time. The idea behind this approach is that Z-scores of
+genotyped and ungenotyped SNPs follow a multivariate normal distribution with
+LD matrix, which can be estimated from a reference panel, as the covariance
+structure -- one can impute the Z-scores of ungenotyped SNPs as the
+expectation of Z-scores of ungenotyped SNPs conditional on the Z-scores of
+genotyped SNPs.</p>
+<p>In detail, let \(Z = (Z_t, Z_u)\) be the Z-score vector partitioned into two
+components, genotyped (\(Z_t\)) and ungenotyped (\(Z_u\)). It has been
+previously shown that $Z$ has the following distribution,
 <script type="math/tex; mode=display">
 \left[
 \begin{array}{c}

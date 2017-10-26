@@ -358,11 +358,11 @@ MVN
 \right]
 \right),
 </script>
-where \(\Lambda = (\Lambda_t, \Lambda_u)\) is the non-centrality parameter,
-\(\Sigma_{tt}\) the LD between genotyped SNPs, \(\Sigma_{tu}\) the LD
+where \( \Lambda = (\Lambda_t, \Lambda_u)\) is the non-centrality parameter,
+\( \Sigma_{tt} \) the LD between genotyped SNPs, \( \Sigma_{tu}\) the LD
 between genotyped and ungenotyped SNPs, \(\Sigma_{uu}\) the LD between
 ungenotyped SNPs.</p>
-<p>The conditional expectation of \(Z_u\) given \(Z_t\) is then
+<p>The conditional expectation of \( Z_u\) given \(Z_t\) is then
 <script type="math/tex; mode=display">
 Z_u | Z_t
 \sim
@@ -375,7 +375,7 @@ MVN
 </script>
 </p>
 <p>We impute the Z-scores of ungenotyped SNPs as
-\(\hat{Z}<em>u = E[Z_u | Z_t] = \Sigma</em>{ut} \Sigma^{-1}<em>{tt} Z_t\) under the
+\( \hat{Z}<em>u = E[Z_u | Z_t] = \Sigma</em>{ut} \Sigma^{-1}<em>{tt} Z_t\) under the
 null assumption that \(\Lambda_u = 0\). Let
 \(W = \Sigma</em>{ut} \Sigma^{-1}<em>{tt}\). This can be viewed as the weights on
 Z-scores of genotyped SNPs in the imputation of Z-scores of ungenotyped SNPs.
